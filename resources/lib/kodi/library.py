@@ -171,7 +171,7 @@ def purge():
     g.SHARED_DB.purge_library()
     for folder_name in [FOLDER_MOVIES, FOLDER_TV]:
         section_dir = xbmc.translatePath(
-            xbmc.makeLegalFilename('/'.join([library_path(), folder_name])))
+            common.make_legal_filename('/'.join([library_path(), folder_name])))
         common.delete_folder_contents(section_dir, delete_subfolders=True)
 
 

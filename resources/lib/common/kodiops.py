@@ -273,3 +273,12 @@ class GetKodiVersion(object):
 
     def __str__(self):
         return self.build_version
+
+
+def make_legal_filename(filename):
+    """Wrapper for makeLegalFilename"""
+    if hasattr(xbmc, 'makeLegalFilename'):  # Kodi 18.x
+        return xbmc.makeLegalFilename(filename)
+    # Kodi 19.x
+    from xbmcvfs import makeLegalFilename
+    return makeLegalFilename(filename)

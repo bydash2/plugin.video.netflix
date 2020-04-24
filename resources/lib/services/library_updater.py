@@ -112,7 +112,7 @@ class LibraryUpdateService(xbmc.Monitor):
             common.debug('Kodi library update requested from library auto-update')
             self.scan_awaiting = False
             common.scan_library(
-                xbmc.makeLegalFilename(
+                common.make_legal_filename(
                     xbmc.translatePath(
                         kodi_library.library_path())))
         else:
